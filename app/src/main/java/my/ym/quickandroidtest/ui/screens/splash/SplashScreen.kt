@@ -27,14 +27,14 @@ import my.ym.quickandroidtest.ui.theme.QuickAndroidTestTheme
 fun SplashScreen(
 	goToNextScreen: () -> Unit,
 
-	events: SharedFlow<SplashViewModel.Event>,
+	event: SharedFlow<SplashEvent>,
 ) {
 	val lifecycleOwner = LocalLifecycleOwner.current
 	LaunchedEffect(key1 = lifecycleOwner) {
 		lifecycleOwner.repeatOnLifecycle(state = Lifecycle.State.STARTED) {
-			events.collectLatest { event ->
+			event.collectLatest { event ->
 				when (event) {
-					SplashViewModel.Event.GoToNextScreen -> goToNextScreen()
+					SplashEvent.GoToNextScreen -> goToNextScreen()
 				}
 			}
 		}
@@ -66,7 +66,7 @@ private fun PreviewSplashScreen() {
 		SplashScreen(
 			goToNextScreen = {},
 
-			events = MutableSharedFlow(),
+			event = MutableSharedFlow(),
 		)
 	}
 }

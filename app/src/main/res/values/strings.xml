@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Discoverer</string>
+    <string name="error_msg_unexpected">Unexpected Error, Please Try Again</string>
+    <string name="try_again">Try Again</string>
+    <string name="refresh">Refresh</string>
+    <string name="no_data_found">No Data Found</string>
 </resources>

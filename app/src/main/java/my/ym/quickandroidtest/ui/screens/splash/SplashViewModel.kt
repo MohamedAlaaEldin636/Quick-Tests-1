@@ -13,19 +13,15 @@ import kotlin.time.Duration.Companion.seconds
 @HiltViewModel
 class SplashViewModel @Inject constructor() : ViewModel() {
 
-	sealed interface Event {
-		data object GoToNextScreen : Event
-	}
-
 	// One Shot Event
-	private val _events = MutableSharedFlow<Event>()
-	val events = _events.asSharedFlow()
+	private val _event = MutableSharedFlow<SplashEvent>()
+	val event = _event.asSharedFlow()
 
 	init {
 		viewModelScope.launch {
 			delay(1.5.seconds)
 
-			_events.emit(value = Event.GoToNextScreen)
+			_event.emit(value = SplashEvent.GoToNextScreen)
 		}
 	}
 

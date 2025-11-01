@@ -12,6 +12,8 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
+import my.ym.quickandroidtest.ui.screens.home.composableOfHome
+import my.ym.quickandroidtest.ui.screens.home.navigateToHome
 import my.ym.quickandroidtest.ui.screens.splash.SplashDestination
 import my.ym.quickandroidtest.ui.screens.splash.composableOfSplash
 import my.ym.quickandroidtest.ui.theme.QuickAndroidTestTheme
@@ -41,11 +43,16 @@ class MainActivity : ComponentActivity() {
 					) {
 						composableOfSplash(
 							goToNextScreen = {
-								// todo go to next screen inshallah ex. HomeScreen inshallah.
+								navHostController.navigateToHome()
+							}
+						)
 
+						composableOfHome(
+							goToMovieDetailsScreen = {
+								// todo
 								Toast.makeText(
 									this@MainActivity,
-									"Triggered Successfully El7mdullah",
+									"Triggered $it Successfully El7mdullah",
 									Toast.LENGTH_SHORT
 								).show()
 							}

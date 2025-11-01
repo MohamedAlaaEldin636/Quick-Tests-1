@@ -13,7 +13,7 @@ fun NavGraphBuilder.composableOfSplash(
 		SplashScreen(
 			goToNextScreen = goToNextScreen,
 
-			events = viewModel.events,
+			event = viewModel.event,
 		)
 	}
 }
