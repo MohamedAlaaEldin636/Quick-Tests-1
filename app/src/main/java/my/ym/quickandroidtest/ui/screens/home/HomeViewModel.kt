@@ -15,6 +15,7 @@ import my.ym.quickandroidtest.domain.repos.RepoMovies
 import my.ym.quickandroidtest.domain.utils.toUIResult
 import javax.inject.Inject
 
+// sadsa
 @HiltViewModel
 class HomeViewModel @Inject constructor(
 	private val repoMovies: RepoMovies,
